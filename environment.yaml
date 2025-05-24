@@ -1,0 +1,21 @@
+name: LLMSymbMech
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - pip
+  - pip:
+    - transformers==4.46.3
+    - transformer-lens==2.13.0
+    - torch
+    - datasets
+    - pyrootutils
+    - tqdm
+    - statsmodels
+    - seaborn
+    - sentencepiece
