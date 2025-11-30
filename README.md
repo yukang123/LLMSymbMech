@@ -168,7 +168,7 @@ We would like to express our sincere thanks to the contributors of [TransformerL
 
 ## :e-mail: Contact
 
-For help or issues about the github codes or huggingface demo of GlyphControl, please email Yukang Yang (yy1325@princeton.edu), and Taylor Webb (taylor.w.webb@gmail.com
+For help or issues about the code, please email Yukang Yang (yy1325@princeton.edu), and Taylor Webb (taylor.w.webb@gmail.com
 ) or submit a GitHub issue.
 
 
