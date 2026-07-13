@@ -15,7 +15,7 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_id", type=str, default="llama3.1-8B", help="model type")
+    parser.add_argument("--model_id", type=str, default="meta-llama/Llama-3.1-8B", help="model type")
     parser.add_argument("--model_remark", type=str, default=None, help="model remark")
     parser.add_argument("--save_file", action="store_true", help="save vocab to file")
     args = parser.parse_args()

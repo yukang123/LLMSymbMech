@@ -8,7 +8,7 @@ import logging
 
 logger: logging.Logger = logging.getLogger(__name__)
 
-HF_HOME = "~/.cache/huggingface" ## set cache folder for huggingface on your choice like this "/scratch/gpfs/userid/.cache". ignore this if using the default dir
+HF_HOME = "~/.cache/huggingface" ## set cache folder for huggingface on your choice like this "/scratch/gpfs/userid/.cache/huggingface". ignore this if using the default dir
 HF_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" # replace with your own HF token; create one under Access Tokens in your HF account
 LINE_SEP = "---------------------\n"
 HEAD_ACTIVATIONS = ["q", "k", "v", "z", "pattern", "attn_scores", "rot_q", "rot_k"]

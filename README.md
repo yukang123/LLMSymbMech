@@ -89,15 +89,15 @@ seed=0 ## try 5 different seeds [0,1,2,3,4] to get the average results over 100 
 ```
 Run the command for ```symbol abstraction heads``` in Llama-3.1-70B:
 ```
-python cma.py --activation_name z --context_type abstract --token_pos_list 4 10 --in_context_example_num 10 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold 0.9 --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
+python cma.py --activation_name z --context_type abstract --token_pos_list 4 10 --in_context_example_num 2 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold 0.9 --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
 ```
 Run the command for ```symbolic induction heads``` in Llama-3.1-70B:
 ```
-python cma.py --activation_name z --context_type abstract --token_pos_list -1 --in_context_example_num 10 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold 0.9 --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
+python cma.py --activation_name z --context_type abstract --token_pos_list -1 --in_context_example_num 2 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold 0.9 --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
 ```
 Run the command for ```retrieval heads``` in Llama-3.1-70B:
 ```
-python cma.py --activation_name z --context_type token --token_pos_list -1 --in_context_example_num 10 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold 0.9 --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
+python cma.py --activation_name z --context_type token --token_pos_list -1 --in_context_example_num 2 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold 0.9 --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
 ```
 Check the ```results/identity_rules/cma``` for the causal mediation scores of all the attention heads. We did permutation statistical tests to identify the significant heads for each head type. Here are the significant heads found in Llama-3.1-70B: 
 
@@ -140,7 +140,6 @@ random_times=10
 python ablation.py --model_type Llama-3.1-70B --head_type symbol_abstraction_head --step_size 2 --adaptive_step_size --rule $rule --prompt_file_for_causal_scores_exp "datasets/cma_scores/llama31_70B/symbol_abstraction_head/base_${rule}_prompt_for_cma_100.txt" --token_pos_list 4 10 --activation_name z --min_valid_sample_num $min_valid_sample_num --load_generation_config  --do_shuffle --seed $seed --prompt_num 1000 --low_prob_threshold 0.9 --n_devices 2 --token_set_file datasets/llama31_70B_correct_common_tokens_0.9_1378.txt  --in_context_example_num 2 --eval_metric gen_acc
 ```
 More commands for full analyses could be found in ```run_identity.sh```. Please refer to ```ablation.py``` for more details.
-
 
 <!-- **E. Attention Analyses**  -->
 
