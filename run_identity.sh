@@ -34,11 +34,11 @@ python cma.py --activation_name attn_out --patch_mlp_out --context_type token --
 ## CMA on different heads
 ## abstract context
 # symbol abstraction heads
-python cma.py --activation_name z --context_type abstract --token_pos_list 4 10 --in_context_example_num 10 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold $threshold --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
+python cma.py --activation_name z --context_type abstract --token_pos_list 4 10 --in_context_example_num 2 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold $threshold --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
 # symbolic induction heads
-python cma.py --activation_name z --context_type abstract --token_pos_list -1 --in_context_example_num 10 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold $threshold --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
+python cma.py --activation_name z --context_type abstract --token_pos_list -1 --in_context_example_num 2 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold $threshold --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
 # retrieval heads
-python cma.py --activation_name z --context_type token --token_pos_list -1 --in_context_example_num 10 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold $threshold --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
+python cma.py --activation_name z --context_type token --token_pos_list -1 --in_context_example_num 2 --base_rule $base_rule --model_type Llama-3.1-70B --seed $seed --min_valid_sample_num $min_valid_sample_num --low_prob_threshold $threshold --do_shuffle --ungroup_grouped_query_attention --prompt_num 1000  --eval_metric gen_acc --load_generation_config --sample_size 4 --n_devices 2 --device_map cpu --device cuda 
 
 
 ## While for systematic analyses of 13 models from 4 families, we do experiments on 10-shot examples (GPT-2, Gemma-2, Qwen2.5, Llama-3.1)
