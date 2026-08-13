@@ -1,3 +1,5 @@
+
+
 <h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;"> Emergent Symbolic Mechanisms<br> Support Abstract Reasoning in LLMs </h1>
 
 <p align='center' style="text-align:center;font-size:1.25em;"> 
@@ -44,7 +46,7 @@ cd LLMSymbMech
 conda env create -f environment.yaml
 conda activate LLMSymbMech
 ``` 
-Two GPUs with 80GB of memory are needed for experiments on Llama3.1-70B and Qwen2.5 72B. H100 is perferred over A100. Only one GPU is needed for other smaller models.
+Two GPUs with 80GB of memory are needed for experiments on Llama3.1-70B and Qwen2.5 72B. H100 is preferred over A100. Only one GPU is needed for other smaller models.
 
 [Important]
 Since Llama3.1 is a gated model, please replace ```HF_TOKEN``` in ```utils.py``` with your own HF token after creating one under Access Tokens in your HF account
@@ -182,7 +184,3 @@ If you find this code useful in your research, please consider citing:
 }
 
 ```
-
-
-
-
